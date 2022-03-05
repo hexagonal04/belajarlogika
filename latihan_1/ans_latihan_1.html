@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<p id="nilai"></p>    
+</body>
+<script>
+   
+    const x=prompt('Masukan Kalimat')
+    const y=x.split(' ')
+
+    const element=[]
+    for (let index = 0; index < y.length; index++) {
+        //do not use const to declare variable
+        //use Let to declare variable because it will be used in for loop
+        let word=''
+        
+
+        //Note:comment this section if you want to use while Method
+        for (let index2 = 0; index2 <= index; index2++) {
+            //concat the word
+            word += y[index2] + ' '
+            
+        }
+        //comment code above if you want to use while Method
+
+        /*Or the simple way you can use this method (Note:please comment 'for ' method before active this 'while' method)*/
+
+        /* ----------------------------------
+        let index2 = 0;     
+         while (index2 <= index ) {
+            word += y[index2] + ' '
+             index2++
+        }
+        -----------------------------------*/
+        
+
+        element.push(word)
+    }
+
+    //you can found the value of element in console on your browser
+    console.log(element)
+    //the element variable should be : ['saya','saya makan','saya makan nasi','saya makan nasi padang']
+
+    document.getElementById('nilai').innerHTML = `${element}`;
+    //Have fun coding :)
+</script>
+</html>
