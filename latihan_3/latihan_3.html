@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 3</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<script>
+
+//3 letters
+function MaskCharacter1(str, mask) {
+return  ('' + str).slice(0, 1) + ('' + str).slice(1).replace(/./g, mask);
+}
+
+//4 letters
+function MaskCharacter2(str, mask) {
+return  ('' + str).slice(0, 1) + ('' + str).substring(1,3).replace(/./g, mask) + ('' + str).slice(3);
+}
+
+//5 letters or more 
+function MaskCharacter3(str, mask, n){
+return  ('' + str).slice(0, 2) + ('' + str).substring(2,n-1).replace(/./g, mask) + ('' + str).slice(n-1);
+}
+
+// input
+const str = prompt('masukan sesuatu')
+const letter = str.split('')
+
+// Call function with value
+if ((letter.length == 3)){
+document.getElementById("demo").innerHTML = (MaskCharacter1(str, '*'));
+}
+else if ((letter.length == 4)){
+document.getElementById("demo").innerHTML = (MaskCharacter2(str, '*'));
+}
+else if ((letter.length >= 5)){
+document.getElementById("demo").innerHTML = (MaskCharacter3(str, '*', letter.length));
+}
+
+
+// for (let index = 0; index < x.length; index++){
+//     if ((x.length = 1) && (y.length = 3)){
+//     document.getElementById("demo").innerHTML = (MaskCharacter1(str, '*'));
+// }
+
+// else if ((x.length = 1) && (y.length = 4)){
+//     document.getElementById("demo").innerHTML = (MaskCharacter2(str, '*'));
+// }
+
+//}
+
+    </script>
+</body>
+</html>
