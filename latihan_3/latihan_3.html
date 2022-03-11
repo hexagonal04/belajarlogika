@@ -33,7 +33,7 @@ const arr = []
 
 //looping
 for (let i = 0; i < letter.length; i++){
-    if (letter[i].length == 3){
+    if (letter[i].length <= 3){
     arr.push(MaskCharacter1(letter[i], '*'));
     }
     else if ((letter[i].length == 4)){
