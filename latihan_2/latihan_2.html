@@ -8,14 +8,20 @@
 </head>
 <body>
 
-
+<p id = 'demo'> </p>
 
 <script>
     const input = prompt('Masukan Kalimat')
     const split = input.split(" ");
-    const reverse = split.reverse();
-    const hasil = reverse.join(' ')
-    document.write(hasil);
+    const arr = []
+    
+    for (let index = split.length; index > 0; index--){
+       arr.push(split[index - 1]);
+       
+    }
+    hasil = arr.join(' ');
+    document.getElementById('demo').innerHTML = `${hasil}`;
+    
 </script>
     
 </body>
