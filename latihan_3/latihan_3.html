@@ -26,32 +26,27 @@ function MaskCharacter3(str, mask, n){
 return  ('' + str).slice(0, 2) + ('' + str).substring(2,n-1).replace(/./g, mask) + ('' + str).slice(n-1);
 }
 
-// input
+//input
 const str = prompt('masukan sesuatu')
-const letter = str.split('')
+const letter = str.split(' ')
+const arr = []
 
-// Call function with value
-if ((letter.length == 3)){
-document.getElementById("demo").innerHTML = (MaskCharacter1(str, '*'));
+//looping
+for (let i = 0; i < letter.length; i++){
+    if (letter[i].length == 3){
+    arr.push(MaskCharacter1(letter[i], '*'));
+    }
+    else if ((letter[i].length == 4)){
+    arr.push(MaskCharacter2(letter[i], '*'));
+    }
+    else if ((letter[i].length >= 5)){
+    arr.push(MaskCharacter3(letter[i], '*', letter[i].length));
+    }
 }
-else if ((letter.length == 4)){
-document.getElementById("demo").innerHTML = (MaskCharacter2(str, '*'));
-}
-else if ((letter.length >= 5)){
-document.getElementById("demo").innerHTML = (MaskCharacter3(str, '*', letter.length));
-}
+hasil = arr.join(' ');
 
-
-// for (let index = 0; index < x.length; index++){
-//     if ((x.length = 1) && (y.length = 3)){
-//     document.getElementById("demo").innerHTML = (MaskCharacter1(str, '*'));
-// }
-
-// else if ((x.length = 1) && (y.length = 4)){
-//     document.getElementById("demo").innerHTML = (MaskCharacter2(str, '*'));
-// }
-
-//}
+//output
+document.getElementById('demo').innerHTML = `${hasil}`;
 
     </script>
 </body>
